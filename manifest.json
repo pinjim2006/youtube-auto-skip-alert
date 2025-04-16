@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube 自動跳過警告",
+    "version": "1.0",
+    "description": "當youtube跳出警告如「以下內容可能包含自殺或自傷的主題。觀眾可酌情觀看該影片。瞭解詳情。」時，自動點擊「我瞭解並希望繼續觀看」的按鈕",
+    "permissions": ["scripting"],
+    "host_permissions": [
+        "https://music.youtube.com/*",
+        "https://www.youtube.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://music.youtube.com/*",
+                "https://www.youtube.com/*"
+            ],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ]
+}
